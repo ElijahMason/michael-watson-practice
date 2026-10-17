@@ -11,6 +11,7 @@ var CONTACT_EMAIL = "";
     for (var i = 0; i < inertNodes.length; i += 1) {
       inertNodes[i].inert = on;
     }
+    document.body.style.overflow = on ? "hidden" : "";
   }
 
   function closeMenu(focusButton) {
