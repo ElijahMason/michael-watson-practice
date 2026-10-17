@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brief, Michael Watson</title>
+  <meta name="description" content="Write Michael Watson a brief with your name, company, need, and timing.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="poster.css">
+</head>
+<body>
+  <a class="skip" href="#poster">Skip to the poster</a>
+  <button type="button" class="index-toggle" data-menu-button aria-expanded="false" aria-controls="folio-index">Index</button>
+  <nav class="folio-index" id="folio-index" data-menu="overlay" aria-label="Posters">
+    <button type="button" class="menu-close" data-menu-close>Close</button>
+    <ol>
+      <li><a href="index.html">01 Motto</a></li>
+      <li><a href="stance.html">02 Stance</a></li>
+      <li><a href="offers.html">03 Offers</a></li>
+      <li><a href="brief.html" aria-current="page">04 Brief</a></li>
+    </ol>
+  </nav>
+  <main class="poster" id="poster" tabindex="-1" data-inert-when-menu>
+    <header class="poster-bar">
+      <p>Michael Watson</p>
+      <p>Ship the smallest true thing.</p>
+    </header>
+    <div class="poster-stage">
+      <svg class="plate" viewBox="0 0 180 72" aria-hidden="true">
+        <rect x="0" y="8" width="140" height="46" fill="#ff4c1a"/>
+        <rect x="18" y="0" width="140" height="46" fill="#111111"/>
+      </svg>
+      <h1>Write the brief.</h1>
+      <p class="line">Name, company, what you need, and timing. Submitting copies the brief and shows it on this poster.</p>
+      <form class="brief-form" data-brief novalidate>
+        <label>Name
+          <input name="name" type="text" autocomplete="name" required>
+        </label>
+        <label>Company
+          <input name="company" type="text" autocomplete="organization" required>
+        </label>
+        <label>What you need
+          <textarea name="need" required></textarea>
+        </label>
+        <label>Timing
+          <input name="timing" type="text" autocomplete="off" required>
+        </label>
+        <button type="submit">Copy the brief</button>
+      </form>
+      <p class="brief-status" data-brief-status role="status"></p>
+      <pre class="brief-out" data-brief-output hidden></pre>
+      <noscript>
+        <p class="line">Script is off. Copy the four fields by hand into your own note.</p>
+      </noscript>
+    </div>
+    <a class="turn" href="index.html">Back to the motto</a>
+  </main>
+  <script src="site.js"></script>
+</body>
+</html>

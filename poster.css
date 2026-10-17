@@ -1,0 +1,312 @@
+:root {
+  --ink: #111111;
+  --paper: #ffffff;
+  --plate: #ff4c1a;
+  --measure: 65ch;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Literata, Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.45;
+  overflow-x: clip;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 40;
+  padding: 0.75rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.skip:focus {
+  clip: auto;
+  clip-path: none;
+  width: auto;
+  height: auto;
+  min-height: 44px;
+  overflow: visible;
+  white-space: normal;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.index-toggle {
+  position: fixed;
+  top: 0.65rem;
+  left: 0.65rem;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.85rem;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.index-toggle[aria-expanded="true"] {
+  z-index: 30;
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--paper);
+}
+
+.folio-index {
+  display: none;
+}
+
+.folio-index.is-open {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: auto;
+  padding: 5rem 1.1rem 1.5rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.folio-index :focus-visible {
+  outline-color: var(--paper);
+}
+
+.folio-index ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.folio-index a,
+.menu-close {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  color: var(--paper);
+  font-family: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(2.6rem, 10vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.menu-close {
+  width: fit-content;
+  margin-bottom: 0.6rem;
+  padding: 0 0.2rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.folio-index a[aria-current="page"] {
+  border-left: 8px solid var(--plate);
+  padding-left: 0.45rem;
+}
+
+.poster {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: 0.8rem 1.15rem 0;
+}
+
+.poster-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.35rem 1rem;
+  min-height: 44px;
+  padding-left: 6.5rem;
+}
+
+.poster-bar p {
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  font-family: "Big Shoulders Display", Impact, sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.poster-stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 1.5rem 0 1.25rem;
+}
+
+.plate {
+  width: min(180px, 42vw);
+  margin: 0 0 1rem auto;
+}
+
+h1,
+.poster h2 {
+  margin: 0;
+  max-width: 100%;
+  font-family: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(3.1rem, 11vw, 8rem);
+  font-weight: 800;
+  line-height: 0.84;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.line {
+  max-width: var(--measure);
+  margin: 1rem 0 0;
+  font-size: 1.2rem;
+}
+
+.turn {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  margin-top: auto;
+  border-top: 2px solid var(--ink);
+  color: var(--ink);
+  font-family: "Big Shoulders Display", Impact, sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.brief-form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 36rem;
+  margin-top: 1rem;
+}
+
+.brief-form label {
+  display: grid;
+  gap: 0.3rem;
+  font-family: "Big Shoulders Display", Impact, sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+input,
+textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem 0.7rem;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.brief-form button {
+  min-height: 56px;
+  border: 0;
+  border-radius: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Big Shoulders Display", Impact, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.brief-out {
+  max-width: var(--measure);
+  margin: 0.8rem 0 0;
+  font-family: Literata, Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.brief-status {
+  min-height: 1.3em;
+  max-width: var(--measure);
+  margin: 0.6rem 0 0;
+}
+
+@media (max-width: 640px) {
+  h1 {
+    max-width: none;
+  }
+
+  .poster-bar p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  button,
+  input,
+  textarea,
+  .turn {
+    border: 1px solid ButtonText;
+  }
+}
