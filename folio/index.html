@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motto, Michael Watson</title>
+  <meta name="description" content="Michael Watson. Ship the smallest true thing.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="poster.css">
+</head>
+<body>
+  <a class="skip" href="#poster">Skip to the poster</a>
+  <button type="button" class="index-toggle" data-menu-button aria-expanded="false" aria-controls="folio-index">Index</button>
+  <nav class="folio-index" id="folio-index" data-menu="overlay" aria-label="Posters">
+    <button type="button" class="menu-close" data-menu-close>Close</button>
+    <ol>
+      <li><a href="index.html" aria-current="page">01 Motto</a></li>
+      <li><a href="stance.html">02 Stance</a></li>
+      <li><a href="offers.html">03 Offers</a></li>
+      <li><a href="brief.html">04 Brief</a></li>
+    </ol>
+  </nav>
+  <main class="poster" id="poster" tabindex="-1" data-inert-when-menu>
+    <header class="poster-bar">
+      <p>Michael Watson</p>
+      <p>01 / 04</p>
+    </header>
+    <div class="poster-stage">
+      <svg class="plate" viewBox="0 0 180 72" aria-hidden="true">
+        <rect x="0" y="14" width="150" height="52" fill="#ff4c1a"/>
+        <rect x="16" y="0" width="150" height="52" fill="#111111"/>
+      </svg>
+      <h1>Ship the smallest true thing.</h1>
+      <p class="line">Michael Watson, software engineering contractor. Student at Oregon State University. The school is a credential, not a sponsor.</p>
+    </div>
+    <a class="turn" href="stance.html">Next, stance</a>
+  </main>
+  <script src="site.js"></script>
+</body>
+</html>
