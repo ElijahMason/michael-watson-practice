@@ -54,6 +54,7 @@ svg {
   clip-path: none;
   width: auto;
   height: auto;
+  min-height: 44px;
   overflow: visible;
   white-space: normal;
 }
@@ -148,15 +149,16 @@ svg {
 
 h1 {
   margin: 0 0 1.15rem;
-  max-width: 16ch;
+  max-width: min(16ch, 100%);
   font-weight: 560;
   font-size: clamp(2.6rem, 6vw, 4.6rem);
   line-height: 0.96;
   letter-spacing: -0.025em;
+  overflow-wrap: break-word;
 }
 
 .cover h1 {
-  max-width: none;
+  max-width: 100%;
   font-size: clamp(3.4rem, 8vw, 6.2rem);
 }
 
@@ -398,6 +400,11 @@ button {
     color: var(--ink);
   }
 
+  .menu-toggle[aria-expanded="true"] {
+    position: fixed;
+    z-index: 25;
+  }
+
   .sheet {
     grid-template-columns: 1fr;
   }
@@ -415,6 +422,7 @@ button {
 
   .index.is-open {
     display: flex;
+    padding-top: 4.25rem;
   }
 
   .menu-close {
